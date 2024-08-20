@@ -4,6 +4,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import { postLogin, postSignUp } from './controllers/user.js'
 import postBookSlot from './controllers/slotBooking.js'
+import { postServiceProvider, getServiceProviders } from './controllers/serviceProvider.js'
 
 dotenv.config()
 const PORT = process.env.PORT || 5000 
@@ -20,7 +21,8 @@ const connectDB = async () => {
 }
 connectDB();
 
-
+app.post("/serviceprovider", postServiceProvider)
+app.get("/serviceproviders", getServiceProviders)
 app.post('/v1/bookslots' , postBookSlot)
 app.post("/v1/signups",postSignUp)
 app.post("/v1/logins", postLogin)

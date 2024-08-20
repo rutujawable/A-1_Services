@@ -1,12 +1,13 @@
 
- import {  ServiceProvider } from "../models/ServiceProvider"
+ import {  ServiceProvider } from "../models/ServiceProvider.js"
 
-const PostServiceProvider = async ()=>{
+const postServiceProvider = async (req,res)=>{
+
     const {user, service , name, mobileNO, experience,location, time } = req.body
 
      const Serviceprovider = new ServiceProvider ({
-        user, 
-        service ,
+        user,
+        service,
          name,
          mobileNO,
          experience,
@@ -28,7 +29,7 @@ const PostServiceProvider = async ()=>{
 }
 
 
-const  GetServiceProviders = async ()=>{
+const  getServiceProviders = async (req,res)=>{
 
     const serviceproviders = await ServiceProvider.find()
 
@@ -50,4 +51,4 @@ const  GetServiceProviders = async ()=>{
 }
 
 
-export {PostServiceProvider, GetServiceProviders}
+export {postServiceProvider, getServiceProviders}
