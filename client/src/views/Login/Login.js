@@ -54,7 +54,7 @@ function Login() {
             setPassword(e.target.value)
           }} />
 
-        <button type='button' className='btn' onClick={loginNow}>Login</button>
+        <button type='button' className='btn-login' onClick={loginNow}>Login</button>
         <p className='redirect' >Don't have an account? <Link to='/signup'>Signup</Link></p>
         </div>
       </form>
