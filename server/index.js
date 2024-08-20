@@ -4,6 +4,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import { postLogin, postSignUp } from './controllers/user.js'
 import postBookSlot from './controllers/slotBooking.js'
+import { postService , getService } from './controllers/service.js'
 
 dotenv.config()
 const PORT = process.env.PORT || 5000 
@@ -24,6 +25,8 @@ connectDB();
 app.post('/v1/bookslots' , postBookSlot)
 app.post("/v1/signups",postSignUp)
 app.post("/v1/logins", postLogin)
+app.post("/v1/services", postService)
+app.get("/v1/services", getService)
 
 app.listen (PORT , ()=>{
     console.log(`Server is running on ${PORT}`)

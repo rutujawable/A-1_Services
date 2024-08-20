@@ -1,24 +1,25 @@
-import {model , Schema} from 'mongoose';
+import { model, Schema } from 'mongoose';
 
 const serviceSchema = new Schema({
-    name:{
-        type:String,
-        required:true,       
+    serviceProvider:
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'ServiceProvider',
     },
-    description:{
-        type:String,           
+    title:{
+        type: String,
+        required: true,
     },
-    price:{
-        type:Number,
-        required:true,       
+    description: {
+        type: String,
     },
-    category:{
-        type:String,
-        required:true, 
-        enum:['carpenter','plumber','electrician','vegetable-stall','barber','cobbler'],               
+    category: {
+        type: String,
+        required: true,
+        enum: ['carpenter', 'plumber', 'electrician', 'vegetable-stall', 'barber', 'cobbler'],
     },
-  },{
-    timestamps:true
+}, {
+    timestamps: true
 });
-const Service = model (service , serviceSchema)
+const Service = model('Service', serviceSchema)
 export default Service

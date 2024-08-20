@@ -1,12 +1,11 @@
 import Service from "../models/Service.js"
 
 const postService = async (req, res) => {
-    const { name, description, price , category } = req.body;
+    const {title, description, category } = req.body;
 
     const service = new Service({ 
-        name, 
-        description,
-        price , 
+        title,
+        description,     
         category 
         });
         
