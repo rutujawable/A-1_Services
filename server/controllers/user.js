@@ -23,7 +23,7 @@ const postSignUp = async (req, res) => {
             message: "Signup Successfully"
         })
     } catch (err) {
-        res.status(401).json({
+        res.json({
             success: false,
             data: null,
             message: 'Please Enter All Fields'
@@ -49,7 +49,7 @@ const postLogin = async (req, res) => {
         })
     }
     else {
-        res.status(401).json({
+        res.json({
             success: false,
             message: "Invalid Email or Password",
             data: null
