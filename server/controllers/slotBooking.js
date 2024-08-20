@@ -1,6 +1,6 @@
- import slotBook from "../models/SlotBooking.js";
+ import SlotBook from "../models/SlotBooking.js";
 
-  const bookSlot = async (req , res)=>{
+  const postBookSlot = async (req , res)=>{
     const { bookingDate, serviceDate, userAddress } = req.body
 
     const SlotBook = new slotBook ({
@@ -21,4 +21,4 @@ if (bookslot)
 
   }
 
-  export default bookSlot;
+  export default postBookSlot;

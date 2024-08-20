@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose'
 
-const slotBookinSchema = new Schema({
+const slotBookingSchema = new Schema({
 
     user:
     {
@@ -41,6 +41,6 @@ const slotBookinSchema = new Schema({
         timestamps: true
     })
 
-    const slotBook = model ('slotBook' , slotBookinSchema)
+    const SlotBook = model ('SlotBook' , slotBookingSchema)
 
-    export default slotBook;
+    export default SlotBook;

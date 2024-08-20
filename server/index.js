@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { postLogin, postSignUp } from './controllers/user.js'
-import bookSlot from './controllers/slotBooking.js'
+import postBookSlot from './controllers/slotBooking.js'
 
 dotenv.config()
 const PORT = process.env.PORT || 5000 
@@ -21,7 +21,7 @@ const connectDB = async () => {
 connectDB();
 
 
-app.post('/v1/bookslots' , bookSlot)
+app.post('/v1/bookslots' , postBookSlot)
 app.post("/v1/signups",postSignUp)
 app.post("/v1/logins", postLogin)
 
