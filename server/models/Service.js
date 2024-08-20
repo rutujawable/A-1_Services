@@ -10,8 +10,7 @@ const serviceSchema = new Schema({
     },
     price:{
         type:Number,
-        required:true,
-       
+        required:true,       
     },
     category:{
         type:String,
@@ -21,5 +20,5 @@ const serviceSchema = new Schema({
   },{
     timestamps:true
 });
-const service = model (service , serviceSchema)
-export default service
+const Service = model (service , serviceSchema)
+export default Service
