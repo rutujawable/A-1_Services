@@ -4,13 +4,13 @@ const serviceProviderSchema = Schema ({
     
 
     user :{
-        type : Schema.type.ObjectId,
+        type : Schema.Types.ObjectId,
         ref :"User",
         required : "true"
     },
 
-    sevice :{
-        type : Schema.type.ObjectId,
+    service :{
+        type : Schema.Types.ObjectId,
         ref : "Service",
         required : "true"
     },
@@ -22,7 +22,8 @@ const serviceProviderSchema = Schema ({
 
     mobileNO:{
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
 
    
