@@ -11,11 +11,11 @@ function Signup() {
         password: '',
         address: '',
         mobile: '',
-        age: '',
+        age: ''
     })
 
     const signup = async () => {
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/user`, {
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/v1/signups`, {
             name: user.name,
             email: user.email,
             password: user.password,
