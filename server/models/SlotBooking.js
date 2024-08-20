@@ -36,6 +36,11 @@ const slotBookingSchema = new Schema({
         type: String,
         require : true
     },
+    description:
+    {
+        type: String,
+        
+    },
 },
     {
         timestamps: true
