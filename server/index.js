@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import { postLogin, postSignUp } from './controllers/user.js'
 dotenv.config()
 const PORT = process.env.PORT || 5000 
 const MONGO_URL = process.env.MONGO_URL 
@@ -16,6 +17,11 @@ const connectDB = async () => {
     }
 }
 connectDB();
+
+
+
+app.post("/v1/signups",postSignUp)
+app.post("/v1/logins", postLogin)
 
 app.listen (PORT , ()=>{
     console.log(`Server is running on ${PORT}`)
