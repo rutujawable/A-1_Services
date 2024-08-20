@@ -43,6 +43,11 @@ function Signup() {
 
             })
 
+            setTimeout(() => {
+                window.location.href = '/login'
+              }, 1500)
+            
+
         }
 
         else {
@@ -108,7 +113,7 @@ function Signup() {
                         onChange={(e) => {
                             setUser({ ...user, mobile: e.target.value })
                         }} />
-                  
+
 
 
                     <button type='button' className='btn-signup' onClick={signup}>Signup</button>
