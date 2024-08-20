@@ -17,13 +17,13 @@ const postSignUp = async (req, res) => {
         
         const savedUser = await user.save();
 
-        res.json({
+        res.status(201).json({
             success: true,
             data: savedUser,
             message: "Signup Successfully"
         })
     } catch (err) {
-        res.json({
+        res.status(401).json({
             success: false,
             data: null,
             message: 'Please Enter All Fields'
@@ -41,7 +41,7 @@ const postLogin = async (req, res) => {
     });
 
     if (user) {
-        res.json({
+        res.status(200).json({
             success: true,
             message: "Login Successfully",
             data: user,
@@ -49,7 +49,7 @@ const postLogin = async (req, res) => {
         })
     }
     else {
-        res.json({
+        res.status(401).json({
             success: false,
             message: "Invalid Email or Password",
             data: null
