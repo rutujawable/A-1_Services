@@ -1,6 +1,6 @@
 .Service-card{
-    width: 300px;
-    height: 320px;
+    width: 350px;
+    height: 350px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -14,19 +14,25 @@
   .Service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  }  
+  } 
   .service-title {
-    font-size: 23px;
-    font-weight: bold;
-    color: #333;
-    margin-top:30%;
+    font-size: 30px;    
   }
   .service-description{
     font-size: 20px;
-
   }
   .service-category{
     font-size: 20px;
-
   }
-  
+  .A-p-button{
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 70px;
+  }
+  .A-p-button:hover{
+    /* transform: scale(2.0)1s; */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }

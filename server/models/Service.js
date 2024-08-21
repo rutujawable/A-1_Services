@@ -1,11 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const serviceSchema = new Schema({
-    serviceProvider:
-    {
-        type: Schema.Types.ObjectId,
-        ref: 'ServiceProvider',
-    },
+const serviceSchema = new Schema({   
     title:{
         type: String,
         required: true,
@@ -16,7 +11,7 @@ const serviceSchema = new Schema({
     category: {
         type: String,
         required: true,
-        enum: ['carpenter', 'plumber', 'electrician', 'vegetable-stall', 'barber', 'cobbler'],
+        enum: ['Carpenter', 'Plumber', 'Electrician', 'Vegetable-stall', 'Barber', 'Cobbler'],
     },
 }, {
     timestamps: true
