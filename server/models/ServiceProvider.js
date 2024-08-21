@@ -6,7 +6,7 @@ const serviceProviderSchema = Schema ({
     user :{
         type : Schema.Types.ObjectId,
         ref :"User",
-        required : "true"
+        
     },
 
     serviceId: {
@@ -41,7 +41,8 @@ const serviceProviderSchema = Schema ({
     
     mobile : {
         type : Number,
-        required : true
+        required : true,
+        unique:"true"
         
     },
 
@@ -53,6 +54,17 @@ const serviceProviderSchema = Schema ({
     time :{
         type: String,
         required : true
+    },
+
+    password : {
+        type : String,
+        required : true,
+        unique :true
+    },
+
+    address: {
+        type: String,
+        required: true
     }
 
     
