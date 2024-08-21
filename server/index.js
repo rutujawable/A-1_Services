@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { postLogin, postSignUp } from './controllers/user.js'
-import {postBookSlot} from './controllers/slotBooking.js'
+import {getAllSlots, postBookSlot} from './controllers/slotBooking.js'
 import { postService , getService } from './controllers/service.js'
 import { postServiceProvider, getServiceProviders, getProvider, postServiceProviderLogin } from './controllers/serviceProvider.js'
 
@@ -27,6 +27,7 @@ app.post("/providerslogin",postServiceProviderLogin)
 app.get ("/providers",getProvider)
 app.get("/serviceproviders", getServiceProviders)
 app.post('/v1/bookslots' , postBookSlot)
+app.get('/v1/getbookedslots', getAllSlots)
 app.post("/v1/signups",postSignUp)
 app.post("/v1/logins", postLogin)
 app.post("/v1/services", postService)
