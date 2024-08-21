@@ -1,9 +1,10 @@
 
  import {  ServiceProvider } from "../models/ServiceProvider.js"
+ import Service from "../models/Service.js"
 
 const postServiceProvider = async (req,res)=>{
 
-    const {user, ownername, shopname,description,category, experience,location, time } = req.body
+    const {user, ownername, shopname,description,category, mobile,location, time, serviceId } = req.body
 
      const Serviceprovider = new ServiceProvider ({
         user,
@@ -11,9 +12,10 @@ const postServiceProvider = async (req,res)=>{
          shopname,
          description,
          category,
-         experience,
+         mobile,
          location, 
-         time
+         time,
+         serviceId
      })
 
      const savedServiceProvider = await Serviceprovider.save()
@@ -52,4 +54,40 @@ const  getServiceProviders = async (req,res)=>{
 }
 
 
-export {postServiceProvider, getServiceProviders}
+const getProvider = async (req,res)=>{
+    
+    const {serviceId} =  req.query
+    console.log(serviceId)
+
+    try{
+
+    const services = await Service.findById(serviceId)
+
+    if(!services){
+        res.json({
+        success:false,
+        data:null,
+        message:"user not found"
+        })
+    }
+    
+
+    const links = await ServiceProvider.find({serviceId:serviceId})
+
+    res.json({
+        success:true,
+        message:"all records fetched successfully",
+        data:links
+    })
+}
+
+    catch(e){
+        res.json({
+            data:e.message
+        })
+    }
+
+}
+
+
+export {postServiceProvider, getServiceProviders,getProvider}

@@ -9,6 +9,13 @@ const serviceProviderSchema = Schema ({
         required : "true"
     },
 
+    serviceId: {
+        type : Schema.Types.ObjectId,
+        ref : "service",
+        required : true 
+
+    },
+
     ownername : {
         type : String,
         required :  true
@@ -24,7 +31,7 @@ const serviceProviderSchema = Schema ({
 
 
     },
-    
+
     category: {
         type: String,
         required: true,
@@ -32,8 +39,9 @@ const serviceProviderSchema = Schema ({
     },
 
     
-    experience : {
+    mobile : {
         type : Number,
+        required : true
         
     },
 
