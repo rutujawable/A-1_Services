@@ -45,7 +45,7 @@ function Signup() {
 
             setTimeout(() => {
                 window.location.href = '/login'
-              }, 1500)
+              }, 1100)
             
 
         }
