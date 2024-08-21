@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { postLogin, postSignUp } from './controllers/user.js'
-import postBookSlot from './controllers/slotBooking.js'
+import {postBookSlot} from './controllers/slotBooking.js'
 import { postService , getService } from './controllers/service.js'
 import { postServiceProvider, getServiceProviders } from './controllers/serviceProvider.js'
 
