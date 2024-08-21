@@ -6,7 +6,7 @@ const serviceProviderSchema = Schema ({
     user :{
         type : Schema.Types.ObjectId,
         ref :"User",
-        required : "true"
+        
     },
 
     serviceId: {
@@ -34,14 +34,16 @@ const serviceProviderSchema = Schema ({
 
     category: {
         type: String,
-        required: true,
+        
         enum: ['carpenter', 'plumber', 'electrician', 'vegetable-stall', 'barber', 'cobbler'],
+        default:"carpenter"
     },
 
     
     mobile : {
         type : Number,
-        required : true
+        required : true,
+        unique:true
         
     },
 
@@ -53,6 +55,17 @@ const serviceProviderSchema = Schema ({
     time :{
         type: String,
         required : true
+    },
+
+    password : {
+        type : String,
+        required : true,
+        
+    },
+
+    address: {
+        type: String,
+        required: true
     }
 
     
