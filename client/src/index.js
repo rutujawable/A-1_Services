@@ -5,18 +5,16 @@ import {createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Home from './views/Home/Home';
 import Login from './views/Login/Login';
 import Signup from './views/Signup/Signup';
-import Category from './views/Category/Category'
 import Service from './views/Service/Service'
 import ServiceProvider from './views/SeviceProvider/ServiceProvider'
 import SlotBooking from './views/SlotBooking/SlotBooking'
+import SP_Signup from './views/SP_Signup/SP_Signup'
+
 
 const router = createBrowserRouter([
   {
   path: '/',
   element: <Home/>
-},{
-  path: '/category',
-  element: <Category/>
 },
 {
   path: '/login',
@@ -37,7 +35,19 @@ const router = createBrowserRouter([
 {
   path: '/signup',
   element: <Signup/>
+},
+{
+  path: '/spsignup',
+  element: <SP_Signup/>
 }
+// {
+//   path: '/splogin',
+//   element: <SP_Login/>
+// },
+// {
+//   path: '/spprofile',
+//   element: <SP_Profile/>
+// }
 
 
 ])
