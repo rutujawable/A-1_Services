@@ -34,15 +34,16 @@ const serviceProviderSchema = Schema ({
 
     category: {
         type: String,
-        required: true,
+        
         enum: ['carpenter', 'plumber', 'electrician', 'vegetable-stall', 'barber', 'cobbler'],
+        default:"carpenter"
     },
 
     
     mobile : {
         type : Number,
         required : true,
-        unique:"true"
+        unique:true
         
     },
 
@@ -59,7 +60,7 @@ const serviceProviderSchema = Schema ({
     password : {
         type : String,
         required : true,
-        unique :true
+        
     },
 
     address: {
