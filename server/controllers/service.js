@@ -20,7 +20,7 @@ const postService = async (req, res) => {
     }
 }
 
-const getService = async (req, res) => {       
+const getService = async (req, res) => {   
         
         
         const allServices = await Service.find();
