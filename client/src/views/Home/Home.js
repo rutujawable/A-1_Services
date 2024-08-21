@@ -37,7 +37,7 @@ function Home() {
                     />
                 )
             })}
-            <Toaster />
+            <Toaster/>
         </div>
 
 
