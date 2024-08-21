@@ -9,24 +9,29 @@ const serviceProviderSchema = Schema ({
         required : "true"
     },
 
-    service :{
-        type : Schema.Types.ObjectId,
-        ref : "Service",
-        required : "true"
+    ownername : {
+        type : String,
+        required :  true
     },
 
-    name:{
-        type:String,
-        required: true
+    shopname : {
+        type : String,
+        required : true
     },
 
-    mobileNO:{
-        type: Number,
+    description : {
+         type : String,
+
+
+    },
+    
+    category: {
+        type: String,
         required: true,
-        unique: true
+        enum: ['carpenter', 'plumber', 'electrician', 'vegetable-stall', 'barber', 'cobbler'],
     },
 
-   
+    
     experience : {
         type : Number,
         
