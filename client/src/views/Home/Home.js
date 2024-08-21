@@ -1,5 +1,9 @@
 import axios from 'axios';
-import toast,{Toaster} from 'react-router-dom';
+import React,{ useState , useEffect } from 'react';
+import toast,{Toaster} from 'react-hot-toast';
+import "./Home.css"
+import HomeCard from "./../../components/HomeCard/HomeCard.js"
+
 
 function Home() {    
     const [service , setService]= useState([])
@@ -26,7 +30,7 @@ function Home() {
         {service.map((service)=>{
             const{id, title, description,category} = service;
             return(
-                <UserCard 
+                <HomeCard 
                 key={id}              
                 title={title}
                 description={description}
