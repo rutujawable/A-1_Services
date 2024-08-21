@@ -3,13 +3,14 @@
 
 const postServiceProvider = async (req,res)=>{
 
-    const {user, service , name, mobileNO, experience,location, time } = req.body
+    const {user, ownername, shopname,description,category, experience,location, time } = req.body
 
      const Serviceprovider = new ServiceProvider ({
         user,
-        service,
-         name,
-         mobileNO,
+        ownername,
+         shopname,
+         description,
+         category,
          experience,
          location, 
          time
