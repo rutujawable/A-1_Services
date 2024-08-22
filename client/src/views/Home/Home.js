@@ -7,6 +7,7 @@ import HomeCard from "./../../components/HomeCard/HomeCard.js"
 
 function Home() {
     const [service, setService] = useState([])
+    
     const loadservice = async () => {
 
         toast.loading("Data is Loading")
@@ -16,18 +17,21 @@ function Home() {
         toast.dismiss()
 
         toast.success("Data Fetched Successfully")
-
+        localStorage.setItem("currentservice", JSON.stringify(response.data.data));
     }
     useEffect(() => {
-        loadservice()
-    }, []
-    )
+        loadservice()        
+    }, []);
+    
+
 
     return (
         <div className="card-container">
 
             {service.map((service) => {
                 const { id, title, description, category } = service;
+                
+                
                 return (
                     <HomeCard
                         key={id}
@@ -37,7 +41,7 @@ function Home() {
                     />
                 )
             })}
-            <Toaster/>
+            <Toaster />
         </div>
 
 
