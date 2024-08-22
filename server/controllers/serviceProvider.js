@@ -4,7 +4,7 @@
 
 const postServiceProvider = async (req,res)=>{
 
-    const {user, ownername, shopname,description,category, mobile,location, time, serviceId } = req.body
+    const {user, ownername, shopname,description,category, mobile,location, time, serviceId,password,address } = req.body
 
      const Serviceprovider = new ServiceProvider ({
         user,
@@ -15,7 +15,9 @@ const postServiceProvider = async (req,res)=>{
          mobile,
          location, 
          time,
-         serviceId
+         serviceId,
+         password,
+         address
      })
 
      const savedServiceProvider = await Serviceprovider.save()
@@ -57,7 +59,7 @@ const  getServiceProviders = async (req,res)=>{
 const getProvider = async (req,res)=>{
     
     const {serviceId} =  req.query
-    console.log(serviceId)
+   
 
     try{
 
@@ -90,4 +92,36 @@ const getProvider = async (req,res)=>{
 }
 
 
-export {postServiceProvider, getServiceProviders,getProvider}
+const postServiceProviderLogin = async (req,res)=>{
+    const { mobile, password } = req.body;
+
+    const serviceProvider = await ServiceProvider.findOne({
+        mobile: mobile,
+        password: password
+
+    });
+
+    if (serviceProvider) {
+        res.status(200).json({
+            success: true,
+            message: " serviceprovider Login Successfully",
+            data: serviceProvider,
+
+        })
+    }
+    else {
+        res.json({
+            success: false,
+            message: "Invalid mobile or Password",
+            data: null
+        })
+    }
+
+}
+
+
+
+
+
+
+export {postServiceProvider, getServiceProviders,getProvider,postServiceProviderLogin}
