@@ -9,7 +9,8 @@ import Service from './views/Service/Service'
 import ServiceProvider from './views/SeviceProvider/ServiceProvider'
 import SlotBooking from './views/SlotBooking/SlotBooking'
 import SP_Signup from './views/SP_Signup/SP_Signup'
-
+import SP_Login from './views/SP_Login/SP_Login';
+import SP_Profile from './views/SP_Profile/SP_Profile'
 
 const router = createBrowserRouter([
   {
@@ -39,15 +40,15 @@ const router = createBrowserRouter([
 {
   path: '/spsignup',
   element: <SP_Signup/>
+},
+{
+  path: '/splogin',
+  element: <SP_Login/>
+},
+{
+  path: '/spprofile',
+  element: <SP_Profile/>
 }
-// {
-//   path: '/splogin',
-//   element: <SP_Login/>
-// },
-// {
-//   path: '/spprofile',
-//   element: <SP_Profile/>
-// }
 
 
 ])

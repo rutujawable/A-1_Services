@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import "./Signup.css"
+import "./SP_Signup.css"
 import toast, { Toaster } from 'react-hot-toast'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -92,13 +92,23 @@ function SP_Signup() {
                             setUser({ ...user, shopname: e.target.value })
                         }} />
 
-                    <input type='enum'
-                        className='name'
-                        placeholder='Select Category'
-                        value={user.category}
-                        onChange={(e) => {
-                            setUser({ ...user, category: e.target.value })
-                        }} />
+
+
+
+                    <select className='name-category'
+                    value={user.category}
+                    onChange={(e) => {
+                        setUser({ ...user, category: e.target.value })
+                    }}
+                    >
+
+                        <option value="carpenter">Carpenter</option>
+                        <option value="plumber">Plumber</option>
+                        <option value="electrician">Electrician</option>
+                        <option value="vegetable-stall">Vegetable-stall</option>
+                        <option value="barber">Barber</option>
+                        <option value="cobbler">Cobbler</option>
+                    </select>
 
                     <input type='text'
                         className='name'
@@ -142,8 +152,8 @@ function SP_Signup() {
                             setUser({ ...user, location: e.target.value })
                         }} />
 
-                
-                        <input type='text'
+
+                    <input type='text'
                         className='name'
                         placeholder='Enter Your Shop Open Time'
                         value={user.time}

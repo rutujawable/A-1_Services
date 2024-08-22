@@ -33,7 +33,7 @@ const getAllSlots = async (req, res) => {
             message: "Please provide id"})
         }
     
-    const slotBook = await SlotBook.findById({serviceProvider: id })
+    const slotBook = await SlotBook.find({serviceProvider: id })
     if (slotBook) {
         res.status(200).json({
             success: true,
