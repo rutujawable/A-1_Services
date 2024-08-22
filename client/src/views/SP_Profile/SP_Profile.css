@@ -1,0 +1,51 @@
+.logout {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+    background-color: red;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+
+
+}
+.logout:hover{
+    background-color: rgb(206, 19, 19);
+    }
+
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(38, 65, 73) ;
+
+}
+.owner-main{
+    margin: 40px auto;
+    padding: 30px 15px;
+   width: 600px;
+   text-align: center;
+   background-color: rgb(81, 151, 151);
+   border-radius: 30px;
+   
+
+   
+}
+.profile-details{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: serif;
+}
+
+@media screen and (max-width: 650px){
+    .owner-main{
+       width: 90%;
+       overflow: hidden;
+       margin:30px auto ;
+       padding: 10px 15px;
+        
+    }
+}

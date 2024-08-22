@@ -1,0 +1,11 @@
+.name-category {
+    display: block;
+    margin: 15px auto;
+    width: 320px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    outline: none;
+cursor: pointer;
+}

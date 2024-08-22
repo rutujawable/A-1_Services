@@ -12,7 +12,7 @@ const serviceProviderSchema = Schema ({
     serviceId: {
         type : Schema.Types.ObjectId,
         ref : "service",
-        required : true 
+        // required : true 
 
     },
 
